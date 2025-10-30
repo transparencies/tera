@@ -15,7 +15,7 @@ jobs:
         include:
         - build: msrv
           os: ubuntu-latest
-          rust: 1.70.0
+          rust: 1.85.0
         - build: stable
           os: ubuntu-latest
           rust: stable
@@ -26,10 +26,10 @@ jobs:
           os: macOS-latest
           rust: stable
         - build: win-msvc
-          os: windows-2019
+          os: windows-2022
           rust: stable
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
     - name: Install Rust
       uses: dtolnay/rust-toolchain@master
       with:
@@ -47,7 +47,7 @@ jobs:
     name: wasm
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Install
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
